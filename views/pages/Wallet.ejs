@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BTC COIN | </title>
+
+    <!-- Bootstrap -->
+    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <!-- header and slide menu-->
+
+            <% include ../partials/header %>
+
+
+            <!--header and slide menu-->
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+
+
+              <div class="row tile_count">
+                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                  <span class="count_top"><i class="fa fa-user"></i>ACB</span>
+                  <div class="count"><%= balanceACB %></div>
+                  <!--span class="count_bottom"><i class="green">4% </i> From last Week</span-->
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                  <span class="count_top"><i class="fa fa-clock-o"></i> BTC</span>
+                  <div class="count"><%= balanceBTC %></div>
+                  <!--span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span-->
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                  <span class="count_top"><i class="fa fa-clock-o"></i> ETH </span>
+                  <div class="count"><%= balanceETH %></div>
+                  <!--span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span-->
+                </div>
+
+                <div class="col-md-6">
+
+                </div>
+                <div class="col-md-6">
+
+                </div>
+
+                <div class="col-md-12 m-b-10">
+                  <div class="thumbnail" style="color:white; background: linear-gradient(to right, #455A64, #263238); padding-top: 25px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                    <h4 class="text-white"><strong>Withdraw requests</strong></h4>
+
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Requested At</th>
+                          <th>Address</th>
+                          <th>Amount</th>
+                          <th>Completed At</th>
+                          <th>TXID</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div class="col-md-6 m-b-10">
+                  <div id="r-btc" style="color:white;background: linear-gradient(to right, #455A64, #263238); padding-top: 25px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                    <h4 class="text-white"><strong>Receive Bitcoin (BTC)</strong></h4>
+                    <p class="text-white">Get address to accept Bitcoin payments</p>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="btc-wallet" tabindex="-1" role="dialog" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body">
+                            <center>
+                              <div class="input-group p-b-10">
+                                <input id="btc_address" class="form-control" name="btc_address" type="text" value="<%= BTCWallet.address %>">
+                                <span class="input-group-btn">
+                                  <button id="copy-btc-address" class="btn btn-primary" type="button">Copy</button>
+                                </span>
+                              </div>
+
+                            </center>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#btc-wallet">Deposit Bitcoin (BTC)</button>
+                    <br><br>
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Address</th>
+                          <th>BTC</th>
+                          <th>
+                            Confirmation
+                            <div class="pull-right">
+                              <a href="#" id="refresh-incoming-btc"><i class="fa fa-refresh"></i></a>
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+
+                      <tbody id="incoming-btc-tbody">
+                        <tr>
+                          <td colspan="3" class="bg-primary-blue">No incoming Bitcoin transaction found</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+                </div>
+                <div class="col-md-6 m-b-10">
+                  <div id="s-btc" style="color:white;background: linear-gradient(to right, #455A64, #263238); padding-top: 25px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                    <h4 class="text-white"><strong>Send Bitcoin (BTC)</strong></h4>
+
+                    <form method="POST" action="/u/send-btc" accept-charset="UTF-8"><input name="_token" type="hidden" value="q1YtcAQDq6kBlQXqNmqWWDdWx5ykBhaOWjSyW0iR">
+                      <div class="form-group">
+                        <label for="address" class="text-white">To Address</label>
+                        <input class="form-control" name="to" type="text" id="address">
+                      </div>
+                      <div class="form-group">
+                        <label for="amount" class="text-white">Amount in Bitcoin</label>
+                        <input class="form-control" name="amount" type="text" id="amount">
+                        <span class="text-white">Fee: 0.0005 BTC</span>
+                      </div>
+                      <div class="form-group">
+                        <label for="password" class="text-white">Password</label>
+                        <input class="form-control" autocomplete="new-password" name="password" type="password" value="" id="password">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Withdraw from BTC wallet</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- /page content -->
+
+              <!-- footer content -->
+              <footer>
+                <div class="pull-right">
+                  Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                </div>
+                <div class="clearfix"></div>
+              </footer>
+              <!-- /footer content -->
+            </div>
+          </div>
+
+          <!-- jQuery -->
+          <script src="/vendors/jquery/dist/jquery.min.js"></script>
+          <!-- Bootstrap -->
+          <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+          <!-- FastClick -->
+          <script src="/vendors/fastclick/lib/fastclick.js"></script>
+          <!-- NProgress -->
+          <script src="/vendors/nprogress/nprogress.js"></script>
+          <!-- Chart.js -->
+          <script src="/vendors/Chart.js/dist/Chart.min.js"></script>
+          <!-- jQuery Sparklines -->
+          <script src="/vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+          <!-- morris.js -->
+          <script src="/vendors/raphael/raphael.min.js"></script>
+          <script src="/vendors/morris.js/morris.min.js"></script>
+          <!-- gauge.js -->
+          <script src="/vendors/gauge.js/dist/gauge.min.js"></script>
+          <!-- bootstrap-progressbar -->
+          <script src="/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+          <!-- Skycons -->
+          <script src="/vendors/skycons/skycons.js"></script>
+          <!-- Flot -->
+          <script src="/vendors/Flot/jquery.flot.js"></script>
+          <script src="/vendors/Flot/jquery.flot.pie.js"></script>
+          <script src="/vendors/Flot/jquery.flot.time.js"></script>
+          <script src="/vendors/Flot/jquery.flot.stack.js"></script>
+          <script src="/vendors/Flot/jquery.flot.resize.js"></script>
+          <!-- Flot plugins -->
+          <script src="/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+          <script src="/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+          <script src="/vendors/flot.curvedlines/curvedLines.js"></script>
+          <!-- DateJS -->
+          <script src="/vendors/DateJS/build/date.js"></script>
+          <!-- bootstrap-daterangepicker -->
+          <script src="/vendors/moment/min/moment.min.js"></script>
+          <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+          <!-- Custom Theme Scripts -->
+          <script src="/build/js/custom.min.js"></script>
+
+  </body>
+</html>

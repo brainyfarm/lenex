@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>BTC COIN | </title>
+
+    <!-- Bootstrap -->
+    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/build/css/custom.min.css" rel="stylesheet">
+
+
+    <!-- bootstrap-progressbar -->
+    <link href="/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+
+    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- iCheck -->
+    <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+
+
+
+            <% include ../partials/header %>
+
+            <!-- page content -->
+            <div class="right_col" role="main">
+
+              <!-- top tiles -->
+              <div class="row tile_count">
+                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                  <span class="count_top"><i class="fa fa-user"></i>ACB | USD 000000</span>
+                  <div class="count"></div>
+                  <span class="count_bottom"><i class="green">0% </i> From last Week</span>
+                </div>
+                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                  <span class="count_top"><i class="fa fa-clock-o"></i> BTC | USD 00000</span>
+                  <div class="count"></div>
+                  <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>0% </i> From last Week</span>
+                </div>
+
+              </div>
+
+              <!-- /top tiles -->
+
+
+              <div class="clearfix"></div>
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="dashboard_graph x_panel">
+                    <div class="row x_title">
+                      <div class="col-md-6">
+                        <h3>Price(BTC)</h3>
+                      </div>
+                      <div class="col-md-6">
+                        <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                          <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                          <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="x_content">
+                      <div class="demo-container" style="height:250px">
+                        <div id="chart_plot_03" class="demo-placeholder"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- /top tiles -->
+
+              <!--summary BTC and USD-->
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="panel panel-inverse">
+                    <div id="summary-body" style="color: white; background: linear-gradient(to right, #3c3c3c, #787878); padding-top: 5px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                      <h4 class="text-white"><strong>SUMMARY</strong></h4>
+
+                      <div class="row">
+                        <div class="col-md-12" style="font-size: 20px; vertical-align: middle;">
+                          <hr style="margin-top: 5px;">
+                          <span>AVERAGE</span>
+                          <div style="float: right">
+
+                            <span style="font-size: 16px; text-align: right; float: right;">
+                              <span style="font-size: 16px"><i class="fa fa-btc"></i> <span id="ex-sum-average">0.00415091</span></span>
+                              <span style="font-size: 12px">(<i class="fa fa-usd"></i> <span id="ex-sum-average_in_usd">33.86</span>)</span>
+                            </span>
+                          </div>
+                          <hr>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12" style="font-size: 20px; vertical-align: middle;">
+                          <span>LAST</span>
+                          <div style="float: right">
+
+                            <span style="font-size: 16px; text-align: right; float: right;">
+                              <span style="font-size: 16px"><i class="fa fa-btc"></i> <span id="ex-sum-last">0.00485100</span></span>
+                              <span style="font-size: 12px">(<i class="fa fa-usd"></i> <span id="ex-sum-last_in_usd">39.57</span>)</span>
+                            </span>
+                          </div>
+                          <hr>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12" style="font-size: 20px; vertical-align: middle;">
+                          <div style="float: right">
+
+                            <span style="font-size: 16px; text-align: right; float: right;">
+                              <span style="font-size: 16px"><i class="fa fa-btc"></i> <span id="ex-sum-vol24hr">7011.52952084</span></span>
+                              <span style="font-size: 12px">(<i class="fa fa-usd"></i> <span id="ex-sum-vol24hr_in_usd">57,196,552.07</span>)</span>
+                            </span>
+                          </div>
+                          <span>24H VOLUME</span>
+                          <hr>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12" style="font-size: 20px; vertical-align: middle;">
+                          <span>24H HIGH</span>
+
+                          <span style="font-size: 16px; text-align: right; float: right;">
+                            <span style="font-size: 16px"><i class="fa fa-btc"></i> <span id="ex-sum-high24hr">0.00495310</span></span>
+                            <span style="font-size: 12px">(<i class="fa fa-usd"></i> <span id="ex-sum-high24hr_in_usd">40.40</span>)</span>
+                          </span>
+                          <hr>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12" style="font-size: 20px; vertical-align: middle;">
+                          <span>24H LOW</span>
+
+                          <span style="font-size: 16px; text-align: right; float: right;">
+                            <span style="font-size: 16px"><i class="fa fa-btc"></i> <span id="ex-sum-low24hr">0.00370007</span></span>
+                            <span style="font-size: 12px">(<i class="fa fa-usd"></i> <span id="ex-sum-low24hr_in_usd">30.18</span>)</span>
+                          </span>
+                          <hr>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--Create BTC/ACB-->
+
+                <div class="col-md-6">
+                  <div id="create-an-order-panel" class="panel panel-inverse">
+
+
+                    <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                      <div id="create-an-order-body" class="panel-body" style="color:white; background: linear-gradient(to right, #3c3c3c, #787878); padding-top: 5px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                        <h4 class="text-white" > <strong>CREATE AN ORDER (BTC/ACB)</strong></h4>
+
+                        <ul class="nav nav-tabs bg-white">
+                          <li class="active" style="width: 50%">
+                            <a href="#create-buy-order-btc" data-toggle="tab" >
+                              <span>Buy Order</span>
+                            </a>
+                          </li>
+                          <li style="width: 50%">
+                            <a href="#create-sell-order-btc" data-toggle="tab" >
+                              <span>Sell Order</span>
+                            </a>
+                          </li>
+                        </ul>
+
+                        <div class="tab-content" style="margin-bottom: 0; padding-bottom: 0;">
+                          <div class="tab-pane active in" id="create-buy-order-btc">
+                            <form method="POST" action="https://hextracoin.co/exchange" accept-charset="UTF-8" id="form-B" class="form-horizontal"><input name="_token" type="hidden" value="CxUkabXwfKHUbaZs4x4gotYoCR4WdqhJDO6PYsq6">
+                              <div class="form-group">
+                                <label for="" class="col-md-3 control-label text-white">Available balance: </label>
+                                <div class="col-md-8">
+                                  <p class="form-control-static" style="padding-top: 6px;">
+                                  <span style="font-size: 125%;" class="text-white">
+                                    0.00000000 BTC
+                                    <a href="#" id="B-fill-all" class="fill-all" data-available="0.00000000" style="color: white !important">(All)</a>
+                                  </span>
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="B-offer_quantity" class="col-md-3 control-label text-white">BTC you spend: </label>
+                                <div class="col-md-8">
+                                  <div class="input-group">
+                                    <input class="form-control offer-quantity" name="B-offer_quantity" type="text" id="B-offer_quantity">
+                                    <span class="input-group-addon" id="basic-addon1">USD <span id="buy-usd">0.00</span></span>
+                                  </div>
+                                </div>
+                              </div>
+
+
+
+                              <div class="form-group">
+                                <label for="B-price" class="col-md-3 control-label text-white">Price per ACB: </label>
+                                <div class="col-md-8">
+                                  <input class="form-control price" name="B-price" type="text" value="0.00486899" id="B-price">
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="B-want_quantity" class="col-md-3 control-label text-white">ACB you receive: </label>
+                                <div class="col-md-8">
+                                  <input class="form-control want-quantity" name="B-want_quantity" type="text" id="B-want_quantity">
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-3" style="text-align: right; height: 34px;">
+                                  <span class="badge" style="margin-top: 8px">Fee 0.25%</span>
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-qrcode fa-lg"></i></span>
+                                    <input class="form-control" placeholder="2FA Code" name="one_time_password" type="text">
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-8 col-md-offset-3">
+                                  <input name="action" type="hidden" value="B">
+                                  <button class="btn btn-primary open-modal-btn" type="button">Create Order</button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+
+
+                          <!--create-sell-oder-btc-->                               
+
+
+                          <div class="tab-pane" id="create-sell-order-btc">
+                            <form method="POST" action="https://hextracoin.co/exchange" accept-charset="UTF-8" id="form-S" class="form-horizontal"><input name="_token" type="hidden" value="bcprE2SVTbsxSzQxLkxvuka2SkeObNEGcpcAYkkn">
+                              <div class="form-group">
+                                <label for="" class="col-md-3 control-label text-white">Available balance: </label>
+                                <div class="col-md-8">
+                                  <p class="form-control-static" style="padding-top: 6px;">
+                                  <span style="font-size: 125%;" class="text-white">
+                                    0.00000000 ACB
+                                    <a href="#" id="S-fill-all" class="fill-all" data-available="0.00000000" style="color: white !important">(All)</a>
+                                  </span>
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="S-offer_quantity" class="col-md-3 control-label text-white">ACB to sell: </label>
+                                <div class="col-md-8">
+                                  <input class="form-control offer-quantity" name="S-offer_quantity" type="text" id="S-offer_quantity">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="S-price" class="col-md-3 control-label text-white">Price per ACB: </label>
+                                <div class="col-md-8">
+                                  <input class="form-control price" name="S-price" type="text" value="0.00452000" id="S-price">
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="S-want_quantity" class="col-md-3 control-label text-white">BTC you receive: </label>
+                                <div class="col-md-8">
+                                  <div class="input-group">
+                                    <input class="form-control want-quantity" name="S-want_quantity" type="text" id="S-want_quantity">
+                                    <span class="input-group-addon" id="basic-addon1">USD <span id="sell-usd">0.00</span></span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-3" style="text-align: right; height: 34px;">
+                                  <span class="badge" style="margin-top: 8px">Fee 0.25%</span>
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-qrcode fa-lg"></i></span>
+                                    <input class="form-control" placeholder="2FA Code" name="one_time_password" type="text">
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-8 col-md-offset-3">
+                                  <input name="action" type="hidden" value="S">
+                                  <button class="btn btn-primary open-modal-btn" type="button">Create Order</button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <!--summary ETH and USD-->
+
+
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="panel panel-inverse">
+                    <div id="summary-body" style="color: white; background: linear-gradient(to right, #3c3c3c, #787878); padding-top: 5px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                      <h4 class="text-white"><strong>SUMMARY</strong></h4>
+
+                      <div class="row">
+                        <div class="col-md-12" style="font-size: 20px; vertical-align: middle;">
+                          <hr style="margin-top: 5px;">
+                          <span>AVERAGE</span>
+                          <div style="float: right">
+
+                            <span style="font-size: 16px; text-align: right; float: right;">
+                              <span style="font-size: 16px"><i class="fa fa-eth"></i> <span id="ex-sum-average">0.00415091</span></span>
+                              <span style="font-size: 12px">(<i class="fa fa-usd"></i> <span id="ex-sum-average_in_usd">33.86</span>)</span>
+                            </span>
+                          </div>
+                          <hr>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12" style="font-size: 20px; vertical-align: middle;">
+                          <span>LAST</span>
+                          <div style="float: right">
+                            <span style="font-size: 16px; text-align: right; float: right;">
+                              <span style="font-size: 16px"><i class="fa fa-eth"></i> <span id="ex-sum-last">0.00485100</span></span>
+                              <span style="font-size: 12px">(<i class="fa fa-usd"></i> <span id="ex-sum-last_in_usd">39.57</span>)</span>
+                            </span>
+                          </div>
+                          <hr>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 style="font-size: 20px; vertical-align: middle;">
+                          <div style="float: right">
+
+                            <span style="font-size: 16px; text-align: right; float: right;">
+                              <span style="font-size: 16px"><i class="fa fa-eth"></i> <span id="ex-sum-vol24hr">7011.52952084</span></span>
+                              <span style="font-size: 12px">(<i class="fa fa-usd"></i> <span id="ex-sum-vol24hr_in_usd">57,196,552.07</span>)</span>
+                            </span>
+                          </div>
+                          <span>24H VOLUME</span>
+                          <hr>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12" style="font-size: 20px; vertical-align: middle;">
+                          <span>24H HIGH</span>
+
+                          <span style="font-size: 16px; text-align: right; float: right;">
+                            <span style="font-size: 16px"><i class="fa fa-eth"></i> <span id="ex-sum-high24hr">0.00495310</span></span>
+                            <span style="font-size: 12px">(<i class="fa fa-usd"></i> <span id="ex-sum-high24hr_in_usd">40.40</span>)</span>
+                          </span>
+                          <hr>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12" style="font-size: 20px; vertical-align: middle;">
+                          <span>24H LOW</span>
+
+                          <span style="font-size: 16px; text-align: right; float: right;">
+                            <span style="font-size: 16px"><i class="fa fa-eth"></i> <span id="ex-sum-low24hr">0.00370007</span></span>
+                            <span style="font-size: 12px">(<i class="fa fa-usd"></i> <span id="ex-sum-low24hr_in_usd">30.18</span>)</span>
+                          </span>
+                          <hr>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <!--create an order (ETH/ACB)-->
+
+
+
+                <div class="col-md-6">
+                  <div id="create-an-order-panel" class="panel panel-inverse">
+                    <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                      <div id="create-an-order-body" class="panel-body" style="color:white;background: linear-gradient(to right, #3c3c3c, #787878); padding-top: 5px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                        <h4 class="text-white"> <strong>CREATE AN ORDER (ETH/ACB)</strong></h4>
+
+                        <ul class="nav nav-tabs bg-white">
+                          <li class="active" style="width: 50%">
+                            <a href="#create-buy-order" data-toggle="tab" class="buy">
+                              <span>Buy Order</span>
+                            </a>
+                          </li>
+                          <li style="width: 50%">
+                            <a href="#create-sell-order" data-toggle="tab" class="sell">
+                              <span>Sell Order</span>
+                            </a>
+                          </li>
+                        </ul>
+
+                        <div class="tab-content" style="margin-bottom: 0; padding-bottom: 0;">
+
+                          <div class="tab-pane active in" id="create-buy-order">
+                            <form method="POST" action="https://hextracoin.co/exchange" accept-charset="UTF-8" id="form-B" class="form-horizontal"><input name="_token" type="hidden" value="CxUkabXwfKHUbaZs4x4gotYoCR4WdqhJDO6PYsq6">
+                              <div class="form-group">
+                                <label for="" class="col-md-3 control-label text-white">Available balance: </label>
+                                <div class="col-md-8">
+                                  <p class="form-control-static" style="padding-top: 6px;">
+                                  <span style="font-size: 125%;" class="text-white">
+                                    0.00000000 BTC
+                                    <a href="#" id="B-fill-all" class="fill-all" data-available="0.00000000" style="color: white !important">(All)</a>
+                                  </span>
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="B-offer_quantity" class="col-md-3 control-label text-white">ETH you spend: </label>
+                                <div class="col-md-8">
+                                  <div class="input-group">
+                                    <input class="form-control offer-quantity" name="B-offer_quantity" type="text" id="B-offer_quantity">
+                                    <span class="input-group-addon" id="basic-addon1">USD <span id="buy-usd">0.00</span></span>
+                                  </div>
+                                </div>
+                              </div>
+
+
+
+                              <div class="form-group">
+                                <label for="B-price" class="col-md-3 control-label text-white">Price per ACB: </label>
+                                <div class="col-md-8">
+                                  <input class="form-control price" name="B-price" type="text" value="0.00486899" id="B-price">
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="B-want_quantity" class="col-md-3 control-label text-white">ACB you receive: </label>
+                                <div class="col-md-8">
+                                  <input class="form-control want-quantity" name="B-want_quantity" type="text" id="B-want_quantity">
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-3" style="text-align: right; height: 34px;">
+                                  <span class="badge" style="margin-top: 8px">Fee 0.25%</span>
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-qrcode fa-lg"></i></span>
+                                    <input class="form-control" placeholder="2FA Code" name="one_time_password" type="text">
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-8 col-md-offset-3">
+                                  <input name="action" type="hidden" value="B">
+                                  <button class="btn btn-primary open-modal-btn" type="button">Create Order</button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+
+
+
+                          <!--create-sell-oder-eth-->     
+
+
+
+                          <div class="tab-pane" id="create-sell-order">
+                            <form method="POST" action="https://hextracoin.co/exchange" accept-charset="UTF-8" id="form-S" class="form-horizontal"><input name="_token" type="hidden" value="bcprE2SVTbsxSzQxLkxvuka2SkeObNEGcpcAYkkn">
+                              <div class="form-group">
+                                <label for="" class="col-md-3 control-label text-white">Available balance: </label>
+                                <div class="col-md-8">
+                                  <p class="form-control-static" style="padding-top: 6px;">
+                                  <span style="font-size: 125%;" class="text-white">
+                                    0.00000000 ACB
+                                    <a href="#" id="S-fill-all" class="fill-all" data-available="0.00000000" style="color: white !important">(All)</a>
+                                  </span>
+                                  </p>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="S-offer_quantity" class="col-md-3 control-label text-white">ACB to sell: </label>
+                                <div class="col-md-8">
+                                  <input class="form-control offer-quantity" name="S-offer_quantity" type="text" id="S-offer_quantity">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label for="S-price" class="col-md-3 control-label text-white">Price per ACB: </label>
+                                <div class="col-md-8">
+                                  <input class="form-control price" name="S-price" type="text" value="0.00452000" id="S-price">
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="S-want_quantity" class="col-md-3 control-label text-white">BTC you receive: </label>
+                                <div class="col-md-8">
+                                  <div class="input-group">
+                                    <input class="form-control want-quantity" name="S-want_quantity" type="text" id="S-want_quantity">
+                                    <span class="input-group-addon" id="basic-addon1">USD <span id="sell-usd">0.00</span></span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-3" style="text-align: right; height: 34px;">
+                                  <span class="badge" style="margin-top: 8px">Fee 0.25%</span>
+                                </div>
+                                <div class="col-md-8">
+                                  <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-qrcode fa-lg"></i></span>
+                                    <input class="form-control" placeholder="2FA Code" name="one_time_password" type="text">
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <div class="col-md-8 col-md-offset-3">
+                                  <input name="action" type="hidden" value="S">
+                                  <button class="btn btn-primary open-modal-btn" type="button">Create Order</button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Create sell oder-->
+
+
+              <!--BTC BUY SEL-->
+
+              <div class="col-md-6">
+                <div class="panel panel-inverse">
+                  <div style=" color:white;background: linear-gradient(to right, #3c3c3c, #787878); padding-top: 5px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                    <h4 class="text-white"> <strong>BUYING ORDERS</strong></h4>
+
+                    <table id="buy-order" class="table table-bordered table-condensed table-hover">
+                      <thead>
+                        <tr>
+                          <th class="text-center"></th>
+                          <th class="text-right">VOLUME (BTC)</th>
+                          <th class="text-right">RATE (BTC)</th>
+                          <th class="text-right">RATE (USD)</th>
+                          <th class="text-right">VOLUME (ACB)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="panel panel-inverse">
+                  <div style="color:white;background: linear-gradient(to right, #3c3c3c, #787878); padding-top: 5px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                    <h4 class="text-white"> <strong>SELLING ORDERS</strong></h4>
+
+                    <table id="sell-order" class="table table-bordered table-condensed table-hover">
+                      <thead>
+                        <tr>
+                          <th class="text-center"></th>
+                          <th class="text-right">VOLUME (BTC)</th>
+                          <th class="text-right">RATE (BTC)</th>
+                          <th class="text-right">RATE (USD)</th>
+                          <th class="text-right">VOLUME (ACB)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <!--ETH BUY SEL -->
+
+
+
+              <div class="col-md-6">
+                <div class="panel panel-inverse">
+                  <div style="color:white;background: linear-gradient(to right, #3c3c3c, #787878); padding-top: 5px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                    <h4 class="text-white"> <strong>BUYING ORDERS</strong></h4>
+
+                    <table id="buy-order" class="table table-bordered table-condensed table-hover">
+                      <thead>
+                        <tr>
+                          <th class="text-center"></th>
+                          <th class="text-right">VOLUME (ETH)</th>
+                          <th class="text-right">RATE (ETH)</th>
+                          <th class="text-right">RATE (USD)</th>
+                          <th class="text-right">VOLUME (ACB)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-md-6">
+                <div class="panel panel-inverse">
+                  <div style="color:white;background: linear-gradient(to right, #3c3c3c, #787878); padding-top: 5px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                    <h4 class="text-white"> <strong>SELLING ORDERS</strong></h4>
+
+                    <table id="sell-order" class="table table-bordered table-condensed table-hover">
+                      <thead>
+                        <tr>
+                          <th class="text-center"></th>
+                          <th class="text-right">VOLUME (ETH)</th>
+                          <th class="text-right">RATE (ETH)</th>
+                          <th class="text-right">RATE (USD)</th>
+                          <th class="text-right">VOLUME (ACB)</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <!--my open order-->
+
+              <div class="col-md-12">
+                <div class="panel panel-inverse">
+                  <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                    <div class="panel-body" style="color:white;background: linear-gradient(to right, #3c3c3c, #787878); padding-top: 5px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                      <h4 class="text-white"><img src="/img/order.png"  width="15"> <strong>MY OPEN ORDER</strong></h4>
+
+                      <ul class="nav nav-tabs bg-white " >
+                        <li class="active" style="width: 50%">
+                          <a href="#open-buy-order" data-toggle="tab" class="buy">
+                            <span>Buy Order</span> <span id="open-buy-order-count"></span>
+                          </a>
+                        </li>
+                        <li style="width: 50%">
+                          <a href="#open-sell-order" data-toggle="tab" class="sell">
+                            <span>Sell Order</span> <span id="open-sell-order-count"></span>
+                          </a>
+                        </li>
+                      </ul>
+
+                      <div class="tab-content" style="margin-bottom: 0; padding-bottom: 0;">
+                        <div class="tab-pane active in" id="open-buy-order">
+                          <table id="open-buy-order-table" class="table table-bordered table-condensed table-hover" style="width: 100% !important;">
+                            <thead>
+                              <tr>
+                                <th></th>
+                                <th>DATE</th>
+                                <th>TYPE</th>
+                                <th>PRICE</th>
+                                <th>UNITS FILLED ACB</th>
+                                <th>UNITS TOTAL ACB</th>
+                                <th>ESTIMATED TOTAL BTC</th>
+                                <th>ESTIMATED TOTAL ETH</th>
+                                <th></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                          </table>
+                        </div>
+
+                        <div class="tab-pane" id="open-sell-order">
+                          <table id="open-sell-order-table" class="table table-bordered table-condensed table-hover" style="width: 100% !important;">
+                            <thead>
+                              <tr>
+                                <th></th>
+                                <th>DATE</th>
+                                <th>TYPE</th>
+                                <th>PRICE</th>
+                                <th>UNITS FILLED ACB</th>
+                                <th>UNITS TOTAL ACB</th>
+                                <th>ESTIMATED TOTAL BTC</th>
+                                <th>ESTIMATED TOTAL ETH</th>
+                                <th></th>
+                              </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--market history-->
+
+              <div class="col-md-12">
+                <div class="panel panel-inverse">
+                  <div class="panel-body" style="color:white;background: linear-gradient(to right, #3c3c3c, #787878); padding-top: 5px; padding-left: 15px; padding-right: 17px; padding-bottom: 25px;">
+                    <h4 class="text-white"> <strong>MARKET HISTORY</strong></h4>
+
+                    <table id="market-history" class="table table-bordered table-condensed table-hover">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th class="text-center">DATE</th>
+                          <th class="text-center">TYPE</th>
+                          <th class="text-right">PRICE (BTC)</th>
+                          <th class="text-right">PRICE (ETH)</th>
+                          <th class="text-right">VOLUME ACB</th>
+                          <th class="text-right">TOTAL BTC</th>
+                          <th class="text-right">TOTAL ETH</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- /page content -->
+
+            <!-- footer content -->
+            <footer>
+              <div class="pull-right">
+
+              </div>
+              <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+          </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="/vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="/vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="/vendors/nprogress/nprogress.js"></script>
+        <!-- Chart.js -->
+        <script src="/vendors/Chart.js/dist/Chart.min.js"></script>
+        <!-- jQuery Sparklines -->
+        <script src="/vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+        <!-- morris.js -->
+        <script src="/vendors/raphael/raphael.min.js"></script>
+        <script src="/vendors/morris.js/morris.min.js"></script>
+        <!-- gauge.js -->
+        <script src="/vendors/gauge.js/dist/gauge.min.js"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <!-- Skycons -->
+        <script src="/vendors/skycons/skycons.js"></script>
+        <!-- Flot -->
+        <script src="/vendors/Flot/jquery.flot.js"></script>
+        <script src="/vendors/Flot/jquery.flot.pie.js"></script>
+        <script src="/vendors/Flot/jquery.flot.time.js"></script>
+        <script src="/vendors/Flot/jquery.flot.stack.js"></script>
+        <script src="/vendors/Flot/jquery.flot.resize.js"></script>
+        <!-- Flot plugins -->
+        <script src="/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+        <script src="/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+        <script src="/vendors/flot.curvedlines/curvedLines.js"></script>
+        <!-- DateJS -->
+        <script src="/vendors/DateJS/build/date.js"></script>
+        <!-- bootstrap-daterangepicker -->
+        <script src="/vendors/moment/min/moment.min.js"></script>
+        <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+        <!-- Custom Theme Scripts -->
+        <script src="/build/js/custom.min.js"></script>
+        <script src="/vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="/vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="/vendors/nprogress/nprogress.js"></script>
+        <!-- iCheck -->
+        <script src="/vendors/iCheck/icheck.min.js"></script>
+        <!-- Datatables -->
+        <script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script src="/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+        <script src="/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script src="/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script src="/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+        <script src="/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+        <script src="/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+        <script src="/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+        <script src="/vendors/jszip/dist/jszip.min.js"></script>
+        <script src="/vendors/pdfmake/build/pdfmake.min.js"></script>
+        <script src="/vendors/pdfmake/build/vfs_fonts.js"></script>
+        <!-- jQuery -->
+        <script src="/vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="/vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="/vendors/nprogress/nprogress.js"></script>
+        <!-- Chart.js -->
+        <script src="/vendors/Chart.js/dist/Chart.min.js"></script>
+        <!-- jQuery Sparklines -->
+        <script src="/vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+        <!-- morris.js -->
+        <script src="/vendors/raphael/raphael.min.js"></script>
+        <script src="/vendors/morris.js/morris.min.js"></script>
+        <!-- gauge.js -->
+        <script src="/vendors/gauge.js/dist/gauge.min.js"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <!-- Skycons -->
+        <script src="/vendors/skycons/skycons.js"></script>
+        <!-- Flot -->
+        <script src="/vendors/Flot/jquery.flot.js"></script>
+        <script src="/vendors/Flot/jquery.flot.pie.js"></script>
+        <script src="/vendors/Flot/jquery.flot.time.js"></script>
+        <script src="/vendors/Flot/jquery.flot.stack.js"></script>
+        <script src="/vendors/Flot/jquery.flot.resize.js"></script>
+        <!-- Flot plugins -->
+        <script src="/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+        <script src="/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+        <script src="/vendors/flot.curvedlines/curvedLines.js"></script>
+        <!-- DateJS -->
+        <script src="/vendors/DateJS/build/date.js"></script>
+        <!-- bootstrap-daterangepicker -->
+        <script src="/vendors/moment/min/moment.min.js"></script>
+        <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+        <!-- Custom Theme Scripts -->
+        <script src="/build/js/custom.min.js"></script>
+        <!-- Custom Theme Scripts -->
+        <script src="/build/js/custom.min.js"></script>
+  </body>
+</html>
